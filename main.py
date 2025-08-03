@@ -5,12 +5,6 @@ from rubber_spot import rubber_spot
 from rubber_stain import rubber_stain
 from rubber_tear import rubber_tear
 
-#from detect_cotton import detect_cotton
-
-#from leather_tearing import leather_tearing
-#from leather_dirty import leather_dirty
-#from leather_scratch import leather_scratch
-
 class App(tk.Tk):
     def __init__(self):
       super().__init__()
@@ -32,7 +26,6 @@ class App(tk.Tk):
         self.glove_type_label.pack(padx = 5, pady = 5)
         
         # Glove Type Options
-        #glove_type = ["Rubber", "Cotton", "Leather"]
         glove_type = ["Rubber"]
         self.glove_type_value = tk.StringVar()
         self.glove_type_option = ttk.Combobox(
@@ -56,8 +49,6 @@ class App(tk.Tk):
         # Defects Options
         self.defects = {
             "Rubber": ["Spot", "Stain", "Tear"]
-            #"Cotton": ["All"],
-            #"Leather": ["Tearing/Hole", "Dirty", "Scratch"],
         }
         self.defects_value = tk.StringVar()
         self.defects_option = ttk.Combobox(
@@ -94,22 +85,6 @@ class App(tk.Tk):
                 rubber_tear()
             else:
                 return
-        
-#        if selected_glove_type == "Cotton":
-#            if selected_defect == "All":
-#                detect_cotton()
-#            else:
-#                return
-        
-#        if selected_glove_type == "Leather":
-#            if selected_defect == "Tearing/Hole":
-#                leather_tearing()
-#            elif selected_defect == "Dirty":
-#                leather_dirty()
-#            elif selected_defect == "Scratch":
-#                leather_scratch()
-#            else:
-#                return
 
 app = App()
 app.mainloop()
